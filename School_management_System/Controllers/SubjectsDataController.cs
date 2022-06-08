@@ -45,7 +45,7 @@ namespace School_management_System.Controllers
         // GET: api/SubjectsData/5
         [ResponseType(typeof(Subjects))]
         [HttpGet]
-        public IHttpActionResult GetSubjects(int id)
+        public IHttpActionResult FindSubjects(int id)
         {
             Subjects subjects = db.Subject.Find(id);
             SubjectsDto subjectsDto = new SubjectsDto()
@@ -69,7 +69,7 @@ namespace School_management_System.Controllers
         // Post: api/SubjectsData/updateSubject/3
         [ResponseType(typeof(void))]
         [HttpPost]
-        public IHttpActionResult PutSubjects(int id, Subjects subjects)
+        public IHttpActionResult updateSubjects(int id, Subjects subjects)
         {
             Debug.WriteLine("I have reached the update subject method");
             if (!ModelState.IsValid)
@@ -106,14 +106,14 @@ namespace School_management_System.Controllers
                     throw;
                 }
             }
-
+            Debug.WriteLine("None of the conditions triggered");
             return StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/SubjectsData/AddSubject
         [ResponseType(typeof(Subjects))]
         [HttpPost]
-        public IHttpActionResult PostSubjects(Subjects subjects)
+        public IHttpActionResult AddSubjects(Subjects subjects)
         {
             if (!ModelState.IsValid)
             {

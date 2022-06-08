@@ -81,6 +81,7 @@ namespace School_management_System.Controllers
             Debug.WriteLine("I have reached the update animal method!");
             if (!ModelState.IsValid)
             {
+                Debug.WriteLine("Model State is invalid");
                 return BadRequest(ModelState);
             }
 

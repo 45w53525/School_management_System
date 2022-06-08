@@ -16,7 +16,7 @@ namespace School_management_System.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/TeachersData
+        // GET: api/TeachersData/ListTeacher/1
         [HttpGet]
         public IEnumerable<TeacherDto> ListTeacher()
         {
@@ -37,7 +37,7 @@ namespace School_management_System.Controllers
         // GET: api/TeachersData/FindTeacher/2
         [ResponseType(typeof(Teacher))]
         [HttpGet]
-        public IHttpActionResult GetTeacher(int id)
+        public IHttpActionResult FindTeacher(int id)
         {
             Teacher teacher = db.Teacher.Find(id);
             TeacherDto TeacherDto = new TeacherDto()
@@ -64,6 +64,7 @@ namespace School_management_System.Controllers
             Debug.WriteLine("I have reached the update animal method!");
             if (!ModelState.IsValid)
             {
+                Debug.WriteLine("Model State is invalid");
                 return BadRequest(ModelState);
             }
 
@@ -103,7 +104,7 @@ namespace School_management_System.Controllers
         // POST: api/TeachersData/AddTeacher/
         [ResponseType(typeof(Teacher))]
         [HttpPost]
-        public IHttpActionResult PostTeacher(Teacher teacher)
+        public IHttpActionResult AddTeacher(Teacher teacher)
         {
             if (!ModelState.IsValid)
             {
