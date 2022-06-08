@@ -69,7 +69,7 @@ namespace School_management_System.Controllers
         // Post: api/SubjectsData/updateSubject/3
         [ResponseType(typeof(void))]
         [HttpPost]
-        public IHttpActionResult updateSubjects(int id, Subjects subjects)
+        public IHttpActionResult UpdateSubjects(int id, Subjects subjects)
         {
             Debug.WriteLine("I have reached the update subject method");
             if (!ModelState.IsValid)

@@ -35,7 +35,9 @@ namespace School_management_System.Controllers
             return Ok(services);
         }
 
-        // PUT: api/ServicesData/5
+        // PUT: api/ServicesData/5/ 
+        // PUT: api/ServicesData/5/
+
         [ResponseType(typeof(void))]
         public IHttpActionResult PutServices(int id, Services services)
         {

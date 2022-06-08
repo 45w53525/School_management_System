@@ -35,7 +35,7 @@ namespace School_management_System.Controllers
         }
 
         // GET: api/TeachersData/ListTeacher/1
-        // GET: api/TeachersData/
+        
         [ResponseType(typeof(Teacher))]
         [HttpGet]
         public IHttpActionResult FindTeacher(int id)
@@ -57,7 +57,7 @@ namespace School_management_System.Controllers
             return Ok(TeacherDto);
         }
 
-        // PostT: api/TeachersData/updateTeacher/2///
+        // Post: api/TeachersData/updateTeacher/2///
         [ResponseType(typeof(void))]
         [HttpPost]
         public IHttpActionResult PutTeacher(int id, Teacher teacher)
